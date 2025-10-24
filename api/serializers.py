@@ -1,6 +1,7 @@
 # File: api/serializers.py
 
-from django.contrib.auth.models import User
+# from django.contrib.auth.models import User
+from .models import *
 from rest_framework import serializers
 
 class UserSerializer(serializers.ModelSerializer):
@@ -21,3 +22,54 @@ class UserSerializer(serializers.ModelSerializer):
             password=validated_data['password']
         )
         return user
+    
+class UserSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = [
+            'id',
+            'username',
+            'email',
+            'role',
+            'created_at',
+            'updated_at'
+        ]
+
+class ReimbursementSerializers(serializers.ModelSerializer):
+    user = UserSerializers(read_only=True)
+    class Meta:
+        model = Reimbursement
+        fields = [
+            'id',
+            'user',
+            'title',
+            'amount',
+            'created_at',
+            'updated_at',
+            'description',
+            'image',
+            'status'
+        ]
+
+class CategorySerializers(serializers.ModelSerializer):
+    class Meta:
+        model = Category
+        fields = [
+            'id',
+            'name',
+            'created_at'
+        ]
+
+class ReimbursementItemSerializers(serializers.ModelSerializer):
+    reimbursement = ReimbursementSerializers(read_only=True)
+    category = CategorySerializers(read_only=True)
+    class Meta:
+        model = ReimbursementItems
+        fields = [
+            'id',
+            'reimbursement',
+            'category',
+            'item_amount',
+            'created_at',
+            'updated_at'
+        ]

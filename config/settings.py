@@ -15,6 +15,8 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 
 # Quick-start development settings - unsuitable for production
@@ -26,7 +28,8 @@ SECRET_KEY = 'django-insecure-twoz+1yj2@v(jvr+#9gaskeuo+zu=^9z^f0_g%)t+nxbibf6^u
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.100.92']
+ALLOWED_HOSTS = ['192.168.1.31']
+# ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -81,9 +84,9 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'reimbursement_db',        # Nama database yang kita buat tadi
+        'NAME': 'reimbursement',        # Nama database yang kita buat tadi
         'USER': 'postgres',             # User default postgres
-        'PASSWORD': '768696',    # Password yang kamu buat saat instalasi
+        'PASSWORD': '112N4ZMU$',   # Password yang kamu buat saat instalasi
         'HOST': 'localhost',
         'PORT': '5432',
     }
