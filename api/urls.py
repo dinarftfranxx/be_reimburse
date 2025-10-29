@@ -9,3 +9,4 @@ urlpatterns = [
     path('login/', obtain_auth_token, name='api_login'),
     path('createUser/', RegisterView.as_view(), name='api_create_user'),
 ]
+

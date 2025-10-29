@@ -1,6 +1,6 @@
 # File: api/serializers.py
 
-# from django.contrib.auth.models import User
+from django.contrib.auth.models import User
 from .models import *
 from rest_framework import serializers
 
@@ -26,17 +26,10 @@ class UserSerializer(serializers.ModelSerializer):
 class UserSerializers(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = [
-            'id',
-            'username',
-            'email',
-            'role',
-            'created_at',
-            'updated_at'
-        ]
+        fields = ['id', 'username', 'email']
 
 class ReimbursementSerializers(serializers.ModelSerializer):
-    user = UserSerializers(read_only=True)
+    user = UserSerializer(read_only=True)
     class Meta:
         model = Reimbursement
         fields = [
