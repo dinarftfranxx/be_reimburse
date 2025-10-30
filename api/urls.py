@@ -8,5 +8,6 @@ urlpatterns = [
     # jalankan fungsi 'obtain_auth_token'"
     path('login/', obtain_auth_token, name='api_login'),
     path('createUser/', RegisterView.as_view(), name='api_create_user'),
+    path('reimbursements/', ReimbursementListView.as_view(), name='api_reimbursement_list'),
 ]
 
