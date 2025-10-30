@@ -1,0 +1,33 @@
+# # Virtual Environment
+# venv/
+
+# # Python cache
+# __pycache__/
+
+# # Lain-lain
+# db.sqlite3
+# .DS_Store
+# Folder Virtual Environment (Paling Penting!)
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Database lokal (jaga-jaga)
+db.sqlite3
+*.sqlite3
+
+# File sistem operasi
+.DS_Store
+Thumbs.db
+
+# File log
+*.log
+
+# Folder upload-an (jika ada)
+/uploads/
+/media/
+
+# File environment (JANGAN PERNAH PUSH PASSWORD)
+.env

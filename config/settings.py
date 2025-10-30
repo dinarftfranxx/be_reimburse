@@ -84,9 +84,9 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'reimbursement',        # Nama database yang kita buat tadi
+        'NAME':  'reimbursement_db', #'reimbursement',        # Nama database yang kita buat tadi
         'USER': 'postgres',             # User default postgres
-        'PASSWORD': '112N4ZMU$',   # Password yang kamu buat saat instalasi
+        'PASSWORD': '768696' ,# '768696',   # Password yang kamu buat saat instalasi
         'HOST': 'localhost',
         'PORT': '5432',
     }
@@ -135,3 +135,9 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Izinkan semua origin/domain untuk akses (untuk development)
 CORS_ALLOW_ALL_ORIGINS = True
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+}

@@ -9,5 +9,6 @@ urlpatterns = [
     path('login/', obtain_auth_token, name='api_login'),
     path('createUser/', RegisterView.as_view(), name='api_create_user'),
     path('getUserAll/', GetUserAllView.as_view(), name='api_get_all_user'),
+    path('reimbursements/', ReimbursementListView.as_view(), name='api_reimbursement_list'),
 ]
 
